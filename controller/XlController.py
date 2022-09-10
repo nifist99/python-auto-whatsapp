@@ -6,7 +6,7 @@ import pywhatkit
 
 
 class Controller:
-    def jabodetabek(pesan,link):
+    def jabodetabek(pesan,link,name):
         profider = Xl.jabodeTabek()
         op=random.sample(profider,1)
         result=" ".join(op)
@@ -21,9 +21,9 @@ class Controller:
             ran=random.randint(1000, 9999)
         number =result+""+str(ran)
         print(number.replace("0","+62",1))
-        pywhatkit.sendwhatmsg_instantly(number.replace("0","+62",1), pesan+"\n\n"+link, 10, tab_close=True)
+        pywhatkit.sendwhatmsg_instantly(number.replace("0","+62",1), pesan+"\n\n"+name+"\n\n"+link, 10, tab_close=True)
 
-    def balinus(pesan,link):
+    def balinus(pesan,link,name):
         profider = Xl.baliNus()
         op=random.sample(profider,1)
         result=" ".join(op)
@@ -38,9 +38,9 @@ class Controller:
             ran=random.randint(1000, 9999)
         number =result+""+str(ran)
         print(number.replace("0","+62",1))
-        pywhatkit.sendwhatmsg_instantly(number.replace("0","+62",1), pesan+"\n\n"+link, 10, tab_close=True)
+        pywhatkit.sendwhatmsg_instantly(number.replace("0","+62",1), pesan+"\n\n"+name+"\n\n"+link, 10, tab_close=True)
 
-    def jawatengah(pesan,link):
+    def jawatengah(pesan,link,name):
         profider = Xl.jawaTengah()
         op=random.sample(profider,1)
         result=" ".join(op)
@@ -55,9 +55,9 @@ class Controller:
             ran=random.randint(1000, 9999)
         number =result+""+str(ran)
         print(number.replace("0","+62",1))
-        pywhatkit.sendwhatmsg_instantly(number.replace("0","+62",1), pesan+"\n\n"+link, 10, tab_close=True)
+        pywhatkit.sendwhatmsg_instantly(number.replace("0","+62",1), pesan+"\n\n"+name+"\n\n"+link, 10, tab_close=True)
 
-    def jawabarat(pesan,link):
+    def jawabarat(pesan,link,name):
         profider = Xl.jawaBarat()
         op=random.sample(profider,1)
         result=" ".join(op)
@@ -72,9 +72,9 @@ class Controller:
             ran=random.randint(1000, 9999)
         number =result+""+str(ran)
         print(number.replace("0","+62",1))
-        pywhatkit.sendwhatmsg_instantly(number.replace("0","+62",1), pesan+"\n\n"+link, 10, tab_close=True)
+        pywhatkit.sendwhatmsg_instantly(number.replace("0","+62",1), pesan+"\n\n"+name+"\n\n"+link, 10, tab_close=True)
 
-    def jawatimur(pesan,link):
+    def jawatimur(pesan,link,name):
         profider = Xl.jawaTimur()
         op=random.sample(profider,1)
         result=" ".join(op)
@@ -89,4 +89,4 @@ class Controller:
             ran=random.randint(1000, 9999)
         number =result+""+str(ran)
         print(number.replace("0","+62",1))
-        pywhatkit.sendwhatmsg_instantly(number.replace("0","+62",1), pesan+"\n\n"+link, 10, tab_close=True)
+        pywhatkit.sendwhatmsg_instantly(number.replace("0","+62",1), pesan+"\n\n"+name+"\n\n"+link, 10, tab_close=True)

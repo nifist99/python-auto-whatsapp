@@ -7,6 +7,8 @@ import pywhatkit
 import requests
 import time
 from controller.XlController import Controller
+from controller.SmartfrenController import ControllerSmartfren
+from controller.TelkomselController import TelkomselController
  
         
 def api(kode):
@@ -22,57 +24,31 @@ def api(kode):
     result = r.json()
     return result
 
-# def process(pesan,link):
-#     ran=random.randint(10000000, 99999999)
-#     op=random.sample(new_operator,1)
-#     result=" ".join(op)
-#     number =result+""+str(ran)
-#     print(number.replace("0","+62",1))
-#     pywhatkit.sendwhatmsg_instantly(number.replace("0","+62",1),pesan+"\n\n"+link, 10, tab_close=True)
-
-# # jumlah nomer 11
-# def process2(pesan,link):
-#     ran=random.randint(1000000, 9999999)
-#     op=random.sample(new_operator,1)
-#     result=" ".join(op)
-#     number =result+""+str(ran)
-#     print(number.replace("0","+62",1))
-#     pywhatkit.sendwhatmsg_instantly(number.replace("0","+62",1), pesan+"\n\n"+link, 10, tab_close=True)
-
-# # jumlah nomer 10
-# def process3(pesan,link):
-#     ran=random.randint(100000, 999999)
-#     op=random.sample(new_operator,1)
-#     result=" ".join(op)
-#     number =result+""+str(ran)
-#     print(number.replace("0","+62",1))
-#     pywhatkit.sendwhatmsg_instantly(number.replace("0","+62",1), pesan+"\n\n"+link, 10, tab_close=True)
-
-# # jumlah nomer 10 - 12
-# def process4(pesan,link):
-#     ran=random.randint(100000, 99999999)
-#     op=random.sample(new_operator,1)
-#     result=" ".join(op)
-#     number =result+""+str(ran)
-#     print(number.replace("0","+62",1))
-#     pywhatkit.sendwhatmsg_instantly(number.replace("0","+62",1), pesan+"\n\n"+link, 10, tab_close=True)
-
 def loopp(kode):
     data = api(kode)
     i=1
     if(data['code']==200):
         for key in data['data']:
-            while i<20:
-                print("program run")
-                Controller.jabodetabek(key['note'],key['link'])
+            while i<2:
+                ControllerSmartfren.default(key['note'],key['link'],key['name'])
                 time.sleep(5)
-                Controller.balinus(key['note'],key['link'])
+                ControllerSmartfren.jabodetabek(key['note'],key['link'],key['name'])
                 time.sleep(5)
-                Controller.jawabarat(key['note'],key['link'])
+                ControllerSmartfren.jateng(key['note'],key['link'],key['name'])
                 time.sleep(5)
-                Controller.jawatengah(key['note'],key['link'])
+                TelkomselController.jawatimur(key['note'],key['link'],key['name'])
                 time.sleep(5)
-                Controller.jawatimur(key['note'],key['link'])
+                TelkomselController.sumatera(key['note'],key['link'],key['name'])
+                time.sleep(5)
+                Controller.jabodetabek(key['note'],key['link'],key['name'])
+                time.sleep(5)
+                Controller.balinus(key['note'],key['link'],key['name'])
+                time.sleep(5)
+                Controller.jawabarat(key['note'],key['link'],key['name'])
+                time.sleep(5)
+                Controller.jawatengah(key['note'],key['link'],key['name'])
+                time.sleep(5)
+                Controller.jawatimur(key['note'],key['link'],key['name'])
                 time.sleep(5)
                 i+=1
                 
