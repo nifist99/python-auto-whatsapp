@@ -10,7 +10,7 @@ from controller.XlController import Controller
 from controller.SmartfrenController import ControllerSmartfren
 from controller.TelkomselController import TelkomselController
  
-        
+    
 def api(kode):
     API_ENDPOINT = "https://tokopedia.kedaiwoeloeng.com/api/affiliate"
   
@@ -26,10 +26,10 @@ def api(kode):
 
 def loopp(kode):
     data = api(kode)
-    i=1
     if(data['code']==200):
         for key in data['data']:
-            while i<2:
+                print(key['name'])
+                print("====================")
                 ControllerSmartfren.default(key['note'],key['link'],key['name'])
                 time.sleep(5)
                 ControllerSmartfren.jabodetabek(key['note'],key['link'],key['name'])
@@ -50,11 +50,13 @@ def loopp(kode):
                 time.sleep(5)
                 Controller.jawatimur(key['note'],key['link'],key['name'])
                 time.sleep(5)
-                i+=1
                 
-        loopp(kode)   
+        nexts(kode)   
     else:
         print("keluar dan jalankan lagi programnya")
+
+def nexts(kode):
+    loopp(kode)
 
 def main():
     kode = input("Masukan Kode Di Website? = ")
